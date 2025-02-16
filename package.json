@@ -4,8 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b vite build && mkdir -p dist/api && cp -r src/api/routes dist/api",
     "lint": "eslint .",
     "preview": "vite preview",
     "watch:api": "yarn tsx watch src/api/index.ts",
