@@ -16,8 +16,6 @@ export const BillboardDetails: FC<BillboardDetailsProps> = ({opened, onClose, id
         success: boolean;
     }>(`${import.meta.env.VITE_API_URL}/get-billboard?id=${id}`);
 
-    console.log(data);
-
     const billboard = data?.billboard;
 
     return (
