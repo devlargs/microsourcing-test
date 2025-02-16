@@ -1,10 +1,12 @@
 import {Button, Card, Flex, Group, Image, Loader, Text, Title} from '@mantine/core';
-import {useFetch, useMediaQuery} from '@mantine/hooks';
+import {useDisclosure, useFetch, useMediaQuery} from '@mantine/hooks';
+import {useState} from 'react';
 import {FaLocationDot} from 'react-icons/fa6';
 import {useInstructions} from '../contexts/instructions/useInstructionContext';
 import {AlertNote} from './AlertNote';
+import {BillboardDetails} from './BillboardDetails';
 
-type Billboard = {
+export type Billboard = {
     address: string;
     advertiser: string;
     billboardText: string;
@@ -16,13 +18,26 @@ type Billboard = {
 };
 
 const Billboards = () => {
+    const [opened, {open, close}] = useDisclosure(false);
+    const [selectedId, setSelectedId] = useState('');
     const {instructions} = useInstructions();
     const isSmallScreen = useMediaQuery('(min-width: 56.25em)');
+
     const {data, loading} = useFetch<{
         billboards: Billboard[];
         instructions: string;
         success: boolean;
     }>(`${import.meta.env.VITE_API_URL}/instruct-drone?instructions=${instructions.join('')}`);
+
+    const openModal = (id: string) => {
+        setSelectedId(id);
+        open();
+    };
+
+    const closeModal = () => {
+        setSelectedId('');
+        close();
+    };
 
     if (!data?.success) {
         return (
@@ -81,12 +96,20 @@ const Billboards = () => {
                             </Text>
                         </Flex>
 
-                        <Button color="green" fullWidth mt="md" radius="md">
+                        <Button
+                            color="green"
+                            fullWidth
+                            mt="md"
+                            radius="md"
+                            onClick={() => openModal(billboard.id)}
+                        >
                             More info
                         </Button>
                     </Card>
                 ))}
             </Flex>
+
+            <BillboardDetails id={selectedId} onClose={closeModal} opened={opened} />
         </>
     ) : (
         <AlertNote description="No data found" />

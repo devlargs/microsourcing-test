@@ -7,7 +7,7 @@ import {InstructionsProvider} from './contexts/instructions/InstructionsProvider
 function App() {
     return (
         <InstructionsProvider>
-            <MantineProvider>
+            <MantineProvider defaultColorScheme="dark">
                 <Box p="xl">
                     <Flex mb="lg">
                         <Flex direction="column" gap="md">
