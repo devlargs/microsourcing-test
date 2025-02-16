@@ -1,44 +1,50 @@
-# Drone Challenge
+# React + TypeScript + Vite
 
-## Introduction
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Bigdatr has an aerial drone which it uses to take photographs of billboards. Instructions are sent to the drone in a simple language that tells the drone which direction to move and when to take a photo. Moves are always exactly 1 km to the north (^), south (v), east (>) or west (<) or take a photograph (x).
+Currently, two official plugins are available:
 
-Unfortunately the instruction processor is not perfect yet so the drone may photograph the same billboard multiple times.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-For example:
+## Expanding the ESLint configuration
 
--   `x^xv` takes photos of 2 unique billboards and ends up back at the starting location
--   `x^^x>>xvvx<<x` takes photos of 4 unique billboards, however the first billboard has 2 photos of it since the drone comes back to the starting position
--   `xx` takes 2 photos of the same billboard and does not move
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-## Setting up the project
+- Configure the top-level `parserOptions` property like this:
 
-Fork or download this project, then:
-
-```sh
-# install dependencies
-yarn install
-
-# Run the api
-yarn watch:api
+```js
+export default tseslint.config({
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
 ```
 
-The api will start running at `http://localhost:4001`.
+- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
+- Optionally add `...tseslint.configs.stylisticTypeChecked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-It consists of 2 GET endpoints
+```js
+// eslint.config.js
+import react from 'eslint-plugin-react'
 
-1. `/instruct-drone` - accepts a list of instructions for the drone, and returns all bilboards found with their details. Example usage: `http://localhost:4001/instruct-drone?instructions=x^xv`
-
-2. `/get-billboard` - accepts an ID of a billboard and returns details of a single billboard. Example usage: `localhost:4001/get-billboard?id=5aba7bffddc4ecbbb81e7fad`
-
-## Requirements
-
-For this code challenge, you are required to setup and create a simple React app:
-
--   add a way to send drone instructions via a UI to the `/instruct-drone` endpoint, and display its results
--   add a way to retrieve and display billboard details via the UI by using the `/get-billboard` endpoint.
--   you are NOT expected to modify the API - only to build a frontend with React
--   please allocate 2 - 3 hours for this challenge
--   please add clear instructions on how to run the React app
--   please note down improvements in your instructions you would like to implement, or a list of things that need to be done to productionise this app
+export default tseslint.config({
+  // Set the react version
+  settings: { react: { version: '18.3' } },
+  plugins: {
+    // Add the react plugin
+    react,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended rules
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules,
+  },
+})
+```
