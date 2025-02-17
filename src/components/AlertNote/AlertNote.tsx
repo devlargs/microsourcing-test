@@ -13,7 +13,7 @@ export const AlertNote: FC<AlertNoteProps> = ({description, title, color}) => {
         <Alert
             color={color || 'red'}
             radius="xs"
-            title={title || 'Somethingg went wrong'}
+            title={title || 'Something went wrong'}
             icon={<IoIosAlert />}
         >
             {description}
