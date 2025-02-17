@@ -16,6 +16,12 @@ Object.defineProperty(window, 'matchMedia', {
     }))
 });
 
+vi.mock('@mantine/hooks', () => ({
+    useFetch: vi.fn(),
+    useDisclosure: vi.fn(),
+    useMediaQuery: vi.fn()
+}));
+
 afterEach(() => {
     cleanup();
 });

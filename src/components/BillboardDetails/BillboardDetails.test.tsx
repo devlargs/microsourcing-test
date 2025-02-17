@@ -4,10 +4,6 @@ import {afterEach, beforeEach, vi} from 'vitest';
 import {render} from '../../tests/testUtils';
 import {BillboardDetails} from './BillboardDetails'; // Adjust the import path accordingly
 
-vi.mock('@mantine/hooks', () => ({
-    useFetch: vi.fn()
-}));
-
 describe('BillboardDetails Component', () => {
     const mockOnClose = vi.fn();
     const mockBillboardData = {
