@@ -2,9 +2,9 @@ import {Button, Card, Flex, Group, Image, Loader, Text, Title} from '@mantine/co
 import {useDisclosure, useFetch, useMediaQuery} from '@mantine/hooks';
 import {useState} from 'react';
 import {FaLocationDot} from 'react-icons/fa6';
-import {useInstructions} from '../contexts/instructions/useInstructionContext';
-import {AlertNote} from './AlertNote';
-import {BillboardDetails} from './BillboardDetails';
+import {useInstructions} from '../../contexts/instructions/useInstructionContext';
+import {AlertNote} from '../AlertNote/AlertNote';
+import {BillboardDetails} from '../BillboardDetails';
 
 export type Billboard = {
     address: string;

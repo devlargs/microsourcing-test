@@ -1,6 +1,6 @@
 import {Button, Flex} from '@mantine/core';
 import {FC} from 'react';
-import {useInstructions} from '../contexts/instructions/useInstructionContext';
+import {useInstructions} from '../../contexts/instructions/useInstructionContext';
 
 const DroneControls: FC = () => {
     const {setInstruction, resetInstruction} = useInstructions();

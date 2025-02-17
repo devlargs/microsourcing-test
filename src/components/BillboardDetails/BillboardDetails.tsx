@@ -2,7 +2,7 @@ import {Card, Flex, Group, Image, Modal, Text} from '@mantine/core';
 import {useFetch} from '@mantine/hooks';
 import {FC} from 'react';
 import {FaLocationDot} from 'react-icons/fa6';
-import {Billboard} from './Billboards';
+import {Billboard} from '../Billboards';
 
 type BillboardDetailsProps = {
     opened: boolean;
