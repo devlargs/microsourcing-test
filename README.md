@@ -6,6 +6,8 @@
 -   [React](https://react.dev/reference/react/createContext) Context (for state management)
 -   [Mantine](https://mantine.dev/) (for the main user interface)
 -   [Typescript](https://www.typescriptlang.org/) (ensuring type safety and better developer experience)
+-   [Vitest](https://vitest.dev/) (A vite-native testing framework)
+-   [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) (React Testing Library builds on top of DOM Testing Library by adding APIs for working with React components)
 
 ## 🛠️ Setting up the project
 
@@ -26,6 +28,13 @@ The api will start running at `http://localhost:4001`.
 ```sh
 # Then run the dev command for the frontend
 yarn dev
+```
+
+### Optional
+
+```sh
+# To run tests, we are using vitest & react testing library . To check for component unit tests, just run
+yarn test
 ```
 
 This will start the app on a local development server.
