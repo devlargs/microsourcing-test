@@ -2,10 +2,10 @@
 
 ## 🚀 Tech Stack Used
 
-- Vite (A fast build tool for modern frontend development)
-- React Context (for state management)
-- Mantine (for the main user interface)
-- Typescript (ensuring type safety and better developer experience)
+- [Vite](https://vite.dev/) (A fast build tool for modern frontend development)
+- [React](https://react.dev/reference/react/createContext) Context (for state management)
+- [Mantine](https://mantine.dev/) (for the main user interface)
+- [Typescript](https://www.typescriptlang.org/) (ensuring type safety and better developer experience)
 
 ## 🛠️ Setting up the project
 
