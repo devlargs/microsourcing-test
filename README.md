@@ -2,12 +2,12 @@
 
 ## 🚀 Tech Stack Used
 
--   [Vite](https://vite.dev/) (A fast build tool for modern frontend development)
--   [React](https://react.dev/reference/react/createContext) Context (for state management)
--   [Mantine](https://mantine.dev/) (for the main user interface)
--   [Typescript](https://www.typescriptlang.org/) (ensuring type safety and better developer experience)
--   [Vitest](https://vitest.dev/) (A vite-native testing framework)
--   [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) (React Testing Library builds on top of DOM Testing Library by adding APIs for working with React components)
+-   [Vite](https://vite.dev/) - A fast build tool for modern frontend development
+-   [React Context](https://react.dev/reference/react/createContext) - lets components pass information deep down without explicitly passing props
+-   [Mantine](https://mantine.dev/) - A fully featured React components library
+-   [Typescript](https://www.typescriptlang.org/) - ensuring type safety and better developer experience
+-   [Vitest](https://vitest.dev/) - A vite-native testing framework
+-   [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) - React Testing Library builds on top of DOM Testing Library by adding APIs for working with React components
 
 ## 🛠️ Setting up the project
 
