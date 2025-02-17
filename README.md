@@ -14,8 +14,7 @@
 yarn install
 ```
 
-## 🤖 Running the Front End
-
+## 🤖 Running the App
 
 ```sh
 # You must first run the api
@@ -25,7 +24,7 @@ yarn watch:api
 The api will start running at `http://localhost:4001`.
 
 ```sh
-# Then run the dev command
+# Then run the dev command for the frontend
 yarn dev
 ```
 
